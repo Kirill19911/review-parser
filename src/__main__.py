@@ -10,14 +10,13 @@ import json
 
 load_dotenv()
 LINK_TO_PARSE = os.environ["LINK_TO_PARSE"]
-print(LINK_TO_PARSE)
 HOME_WORKSHEET = os.environ["HOME_WORKSHEET"]
 SHEET = os.environ["SHEET"]
 CELL_RANGE = os.environ["CELL_RANGE"]
 JSON_GOOGLE_CREDS =json.loads(os.environ["JSON_GOOGLE_CREDS"])
 
 
-
+logging.basicConfig(level=logging.INFO)
 gc = gspread.service_account_from_dict(JSON_GOOGLE_CREDS)
 
 
@@ -36,8 +35,6 @@ class ReviewSheet:
     def print_all_non_empty_cells(self) -> None:
         print(self._get_working_sheet().get_all_values())
 
-
-logging.basicConfig( encoding='utf-8', level=logging.INFO)
 
 def main():
     
