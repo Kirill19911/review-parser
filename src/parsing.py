@@ -3,9 +3,10 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import logging
+
 LINK_TO_PARSE = "https://www.trustpilot.com/review/www.google.com"
 
-logger = logging.getLogger(__name__)
+logging.basicConfig(encoding='utf-8', level=logging.INFO)
 
 @dataclass
 class ReviewProcessor:
@@ -39,9 +40,9 @@ class ReviewProcessor:
         return review_counts_per_star
 
 
-proc = ReviewProcessor(LINK_TO_PARSE)
-proc.init_soup()
+# proc = ReviewProcessor(LINK_TO_PARSE)
+# proc.init_soup()
 
-print(proc.get_per_star_review_count())
-print(proc.get_total_review_count())
-print(proc.get_rating())
+# print(proc.get_per_star_review_count())
+# print(proc.get_total_review_count())
+# print(proc.get_rating())
