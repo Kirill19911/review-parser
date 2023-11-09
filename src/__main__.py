@@ -49,7 +49,7 @@ def main():
     all_data_dict["update_time"] = str(datetime.datetime.now())
     logging.info(f"{all_data_dict}: data for adding to Google sheets")
 
-    rs = ReviewSheet(HOME_WORKSHEET, int(SHEET))
+    rs = ReviewSheet(HOME_WORKSHEET, SHEET)
     rs.add_new_sheet_row(review_data=list(all_data_dict.values()), range=CELL_RANGE)
     logging.info(f"A new row has been added")
 
