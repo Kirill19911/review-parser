@@ -1,3 +1,3 @@
 # scrapper-project
 
-Describe your project here.
+The app is running on cron every hour using the Railway platform.
