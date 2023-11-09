@@ -11,7 +11,7 @@ import json
 load_dotenv()
 LINK_TO_PARSE = os.environ["LINK_TO_PARSE"]
 HOME_WORKSHEET = os.environ["HOME_WORKSHEET"]
-SHEET = os.environ["SHEET"]
+SHEET = 0
 CELL_RANGE = os.environ["CELL_RANGE"]
 JSON_GOOGLE_CREDS =json.loads(os.environ["JSON_GOOGLE_CREDS"])
 
@@ -26,7 +26,7 @@ class ReviewSheet:
     sheet_name: str
 
     def _get_working_sheet(self):
-        return gc.open_by_url(self.worksheet_url).worksheet(self.sheet_name)
+        return gc.open_by_url(self.worksheet_url).get_worksheet(self.sheet_name)
     
     def add_new_sheet_row(self, review_data: list, range: str) -> None:
         worksheet = self._get_working_sheet()
