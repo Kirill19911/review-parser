@@ -26,7 +26,7 @@ class ReviewSheet:
     sheet_name: str
 
     def _get_working_sheet(self):
-        return gc.open_by_key(self.worksheet_url).worksheet(self.sheet_name)
+        return gc.open_by_url(self.worksheet_url).worksheet(self.sheet_name)
     
     def add_new_sheet_row(self, review_data: list, range: str) -> None:
         worksheet = self._get_working_sheet()
