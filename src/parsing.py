@@ -6,7 +6,7 @@ import logging
 
 LINK_TO_PARSE = "https://www.trustpilot.com/review/www.google.com"
 
-logging.basicConfig(encoding='utf-8', level=logging.INFO)
+logging.basicConfig(level=logging.INFO)
 
 @dataclass
 class ReviewProcessor:
