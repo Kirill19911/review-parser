@@ -12,8 +12,7 @@ load_dotenv()
 LINK_TO_PARSE = os.environ["LINK_TO_PARSE"]
 HOME_WORKSHEET = os.environ["HOME_WORKSHEET"]
 SHEET = 0
-CELL_RANGE = os.environ["CELL_RANGE"]
-print(CELL_RANGE)
+CELL_RANGE = "A:H"
 JSON_GOOGLE_CREDS =json.loads(os.environ["JSON_GOOGLE_CREDS"])
 
 
